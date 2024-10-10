@@ -4,21 +4,34 @@
 
 using namespace std;
 
+//Basado en que el archivo .h tendra 1000 registros by default
+int extraCount = 1000;
+
+
 //Definicion de funciones
 void showDescending(){
     /* ¿Como ordenar el listado para mostrar en orden descendiente? Min heap*/
 }
 
 void addEmployee(string n, float s){
-    /*Agregar empleado a la lista deol archivo .h*/
+    /*Agregar empleado a la lista del archivo .h*/
+    employees[extraCount].name = n;
+    employees[extraCount].salary = s;
+    extraCount++;
 }
 
-void updateEmployee(int id){
+void updateEmployee(int id, string n, float s){
     /*Reingresar la informacion del empleado*/
+    
 }
 
 void removeEmployee(int id){
     /*Eliminar al empleado de la lista*/
+}
+
+//Funcion temporal 
+void viewEmployee(int id){
+    cout << employees[id].salary << "\n";
 }
 
 int main(){
@@ -48,8 +61,10 @@ int main(){
         case 1:
             /* Hacer lo de min heap */
             cout << "Mostrando los empleados en orden descendiente basado en salario\n";
+            cin >> id;
             cout << "   ID   ||      Nombre      ||      Salario      ||\n";
-            showDescending();
+            //showDescending();
+            viewEmployee(id);
             break;
         case 2:
             /* Agregar nuevo empleado */
@@ -62,7 +77,9 @@ int main(){
         case 3:
             /* modificar empleado */
             cout << "Ingresar el numero identificador del empleado "; cin >> id;
-            updateEmployee(id);
+            cout << "Nuevo nombre "; cin >> name;
+            cout << "Nuevo salario "; cin >> salary;
+            updateEmployee(id, name, salary);
             cout << "Se ha modificado correctamente el empleado\n";
             break;
         case 4:

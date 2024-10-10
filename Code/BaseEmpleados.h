@@ -20,7 +20,7 @@ Employee paola = Employee{"Paola Novoa", 156.50};
 Employee andres = Employee{"Andres Machuca", 461.71};
 
 //Arreglo que contiene todos los empleados (Listado de empleados)
-Employee employees[1000] = {pedro, maria, rafael, paola, andres};
+Employee employees[1100] = {pedro, maria, rafael, paola, andres};
 
 
 #endif
