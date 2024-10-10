@@ -1,20 +1,17 @@
 #include <iostream>
 #include <string>
+#include "BaseEmpleados.h"
 
 using namespace std;
-
-//Estructura de datos del empleado
-struct Employee
-{
-    string name;
-    float salary;
-};
 
 
 int main(){
 
-    Employee test = Employee{"Test employee", 1000.51};
+    //Prueba de busqueda simple de empleado en el otro archivo (base de datos)
+    //Es principlamente para verificar la conexion entre archivos y verificar la llamada de informacion
+    int id = 0;
+    cin >> id;
 
-    cout << test.salary << "\n";
+    cout << employees[id].salary << "\n";
     return 0;
 }
