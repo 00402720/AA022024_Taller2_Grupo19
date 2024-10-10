@@ -11,11 +11,11 @@
 
 ### Codigo
     - Estructura de datos               100%
-    - Monticulos                        0%
-    - Algoritmo de Ordenamiento         0%
-    - Insertar empleado                 0%
-    - Remover Empleado                  0%
-    - Busqueda/Modificacion Empleado    0%
+    - Monticulos                        10%
+    - Algoritmo de Ordenamiento         10%
+    - Insertar empleado                 10%
+    - Remover Empleado                  10%
+    - Busqueda/Modificacion Empleado    10%
     - Menu interactivo con el usuario   100%
 
 ### Analisis
