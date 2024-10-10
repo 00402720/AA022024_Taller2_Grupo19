@@ -10,13 +10,13 @@
 *En proceso*
 
 ### Codigo
-    - Estructura de datos               0%
+    - Estructura de datos               100%
     - Monticulos                        0%
     - Algoritmo de Ordenamiento         0%
     - Insertar empleado                 0%
     - Remover Empleado                  0%
     - Busqueda/Modificacion Empleado    0%
-    - Menu interactivo con el usuario   0%
+    - Menu interactivo con el usuario   100%
 
 ### Analisis
 
