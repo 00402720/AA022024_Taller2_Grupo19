@@ -5,12 +5,29 @@
 using namespace std;
 
 //Basado en que el archivo .h tendra 1000 registros by default
+//Varia en base a los registros agregados y eliminados de la lista
 int extraCount = 1000;
 
+void printEmployees(){
+    cout << "   ID   ||      Nombre      ||      Salario      ||\n";
+    for (int p = 0; p < extraCount; p++)
+    {
+        if(employees[p].name != ""){
+        cout << "  " << p << "        " << employees[p].name << "         " << employees[p].salary << "\n";
+        }
+    }
+}
+
+//Funcion temporal de prueba
+void viewEmployee(int id){
+    cout << "Nombre: " << employees[id].name << "\n";
+    cout << "Salario: " << employees[id].salary << "\n";
+}
 
 //Definicion de funciones
 void showDescending(){
     /* ¿Como ordenar el listado para mostrar en orden descendiente? Min heap*/
+    printEmployees();//No version de ordenamiento solo muestra de listado
 }
 
 void addEmployee(string n, float s){
@@ -22,16 +39,17 @@ void addEmployee(string n, float s){
 
 void updateEmployee(int id, string n, float s){
     /*Reingresar la informacion del empleado*/
-    
+    employees[id].name = n;
+    employees[id].salary = s;    
 }
 
 void removeEmployee(int id){
     /*Eliminar al empleado de la lista*/
-}
-
-//Funcion temporal 
-void viewEmployee(int id){
-    cout << employees[id].salary << "\n";
+    for (int i = id+1 ; i < extraCount; i++)
+    {
+        employees[i - 1] = employees[i];
+    }
+    extraCount--;
 }
 
 int main(){
@@ -61,10 +79,7 @@ int main(){
         case 1:
             /* Hacer lo de min heap */
             cout << "Mostrando los empleados en orden descendiente basado en salario\n";
-            cin >> id;
-            cout << "   ID   ||      Nombre      ||      Salario      ||\n";
-            //showDescending();
-            viewEmployee(id);
+            showDescending();
             break;
         case 2:
             /* Agregar nuevo empleado */
@@ -93,13 +108,6 @@ int main(){
             break;
         }
     } while (option != 0);
-    
-    /*
-    Para futura referencia
-    int id = 0;
-    cin >> id;
 
-    cout << employees[id].salary << "\n";
-    */
     return 0;
 }

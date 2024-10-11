@@ -13,9 +13,9 @@
     - Estructura de datos               100%
     - Monticulos                        10%
     - Algoritmo de Ordenamiento         10%
-    - Insertar empleado                 15%
-    - Remover Empleado                  10%
-    - Busqueda/Modificacion Empleado    10%
+    - Insertar empleado                 100%
+    - Remover Empleado                  100%
+    - Busqueda/Modificacion Empleado    100%
     - Menu interactivo con el usuario   100%
 
 ### Analisis
