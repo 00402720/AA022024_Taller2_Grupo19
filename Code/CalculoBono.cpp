@@ -10,7 +10,7 @@ int extraCount = 1000;
 
 void printEmployees(){
     cout << "   ID   ||      Nombre      ||      Salario      ||\n";
-    for (int p = 0; p < extraCount; p++)
+    for (int p = extraCount; p >= 0 ; p--)
     {
         if(employees[p].name != ""){
         cout << "  " << p << "        " << employees[p].name << "         " << employees[p].salary << "\n";
@@ -24,10 +24,52 @@ void viewEmployee(int id){
     cout << "Salario: " << employees[id].salary << "\n";
 }
 
+void orderHeap(Employee emp[], int n, int i) {
+    int largest = i;         // Inicializamos la raiz como el valor mas grande
+    int left = 2 * i + 1;     // definimos el hijo derecho de la raiz, en caso 0 toma posicion 1
+    int right = 2 * i + 2;    // Definimos el hijo izquierdo de la raiz, en caso 0 toma posicion 2
+
+    // Si el hijo izquierdo es el mas grande
+    if (left < n && emp[left].salary > emp[largest].salary)
+        largest = left;
+
+    // si el hijo derecho es el mas grande de todos
+    if (right < n && emp[right].salary > emp[largest].salary)
+        largest = right;
+
+    // SI una vez comparados la raiz escogida al principio no es la mayor
+    if (largest != i) {
+        swap(emp[i], emp[largest]);
+
+        // Volvemos a llamar para arreglar en base a los cambios que han ocurrido
+        orderHeap(emp, n, largest);
+    }
+}
+
+
+void doMaxHeap(Employee emp[]) {
+    int n = extraCount;
+
+    // Build max heap
+    for (int i = n / 2 - 1; i >= 0; i--) {
+        orderHeap(emp, n, i);
+    }
+
+    // One by one extract elements from heap
+    for (int i = n - 1; i > 0; i--) {
+        swap(emp[0], emp[i]);  // Move current root to end
+        orderHeap(emp, i, 0);   // Re-heapify the reduced heap
+    }
+
+    // Optional: Print the sorted employees
+    printEmployees();  // This will now display from largest to smallest salary
+}
+
 //Definicion de funciones
 void showDescending(){
     /* ¿Como ordenar el listado para mostrar en orden descendiente? Min heap*/
-    printEmployees();//No version de ordenamiento solo muestra de listado
+    doMaxHeap(employees);
+    //una vez ordenado muestra el listado
 }
 
 void addEmployee(string n, float s){

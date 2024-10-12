@@ -11,8 +11,8 @@
 
 ### Codigo
     - Estructura de datos               100%
-    - Monticulos                        10%
-    - Algoritmo de Ordenamiento         10%
+    - Monticulos                        100%
+    - Algoritmo de Ordenamiento         100%
     - Insertar empleado                 100%
     - Remover Empleado                  100%
     - Busqueda/Modificacion Empleado    100%
