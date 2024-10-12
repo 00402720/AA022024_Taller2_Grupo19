@@ -7,7 +7,7 @@
 3. Analisis
 
 ### Infografia
-*En proceso*
+*Finalizado*
 
 ### Codigo
     - Estructura de datos               100%
@@ -20,4 +20,4 @@
 
 ### Analisis
 
-*Esperando codigo finalizado*
+*Finalizado*
